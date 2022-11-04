@@ -1,0 +1,223 @@
+6. 13th march live class project 1 starting 
+========================================================
+
+
+
+inline and block line elements
+types of css 
+internal css, inline css, exteral css
+============================================
+H1-> block level element
+===============================================
+inline css: is not a best practice because when we want to change the color 
+we need to change for each and every tag, it will be difficult when code is large 
+so , internal css is introduced,
+
+in inline css duplication of code is happening which is not a best 
+practice when is comes to coding 
+=============================================================
+how internal is better than inline:
+when there is <h1> tag abd if you want to change color of all h1 tags 
+background , if you are using inline aand there are 1000 h1 tags 
+then you have to cahnge 1000 times , instead of that just use internal 
+css which is placed in head , where it will change color of all
+h1 tags at once 
+
+=======================================================
+
+if style is applied in both inline and internal , then 
+style specified in inline is prefered when compared to 
+internal (inline has more priority)
+
+even if you see in console inline css is placed on top 
+then internal css and least priority given to user style sheet(37:00)
+
+==============================================================
+
+even in internal css there is a problem ,
+
+if there are multiple files for eg.100 and if you want to change the 
+backgorund of css , if you use internal css , you need to go to each 
+and every html file to change the background color of h1 tag 
+
+instead of that just use a file name main.css , in the same folder 
+where html files are there and update the background clor of h1 tag 
+then you can change the background color of h1 tah of each and every
+file at once rather doing it 100 times when you use internal css 
+
+=======================================================================
+
+inline css is given more preference than comapred to internal and external
+CSS 
+=================================================================
+IN html file , if you apply internal css first and then 
+external css link , then page will take external css properties 
+
+vice-versa 
+
+that means what is applied second it will overwrite the first one 
+
+===================================================================
+
+but what ever it is , inline has given more preference compared to 
+remaining types of css , irrespective of order they are applied
+
+======================================================================
+
+my explanation -(inline css is given high priority because , even it is
+following the latest line applies to page bacause , inline is in body tag
+and body tag will come after head tag , and style tag and link 
+tag(external css) will be writeen first as they belong to head tag, 
+that is why inline got high priority )
+
+=======================================================================
+
+alt + uparrow ---> to cahnge the position of line up and down 
+======================================================================
+
+=================================================================
+FLEX BOX 
+=================================================================  
+
+1) Flex box is for positioning of elements 
+<div class="container">
+<div class="box1></div>
+<div class="box2></div>
+<div class="box3></div>
+<div class="box4></div>
+</div>
+
+if i apply flex box to the container then it will apply only to child of
+container that is box1,box2,box3,box4 , but it will not apply to the childs
+of box1 2,3,4.
+
+======================================================================
+
+class vs id 
+
+we cannot have two elements with same id 
+but we can have two elemenst under same class name
+
+=============================================================
+.ele :-
+dot(.) is used to apply the style for all the class which has class 
+name as ele 
+            eg:- <h1 class = ele></h1>
+
+#ele :-
+hash(#) is used to apply the style for all the id elements which has
+id name as ele 
+            eg:- <h1 id = ele></h1>
+
+
+ele :
+    if only ele is used then apply the style for all the
+     elements which has name as ele
+            eg: <ele></ele>
+
+====================================================================
+
+in html file ,
+if I type .container and enter 
+then "<div class='container'><\div>" <- this will appear
+-------------------------------------------------------------------
+if I type #container and enter 
+then "<div id='container'><\div>" <- this will appear
+------------------------------------------------------------------
+if i type .container>.box*4 
+then "<div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>"  <- this will appear 
+------------------------------------------------------------------
+if i type .c0>(.c1+.c2)
+then "<div class="c0">
+        <div class="c1"></div>
+        <div class="c2"></div>
+    </div>"
+------------------------------------------------------------------
+if I type .c1>.c2>.c3 
+then "<div class="c1">
+        <div class="c2">
+            <div class="c3"></div>
+        </div>
+    </div>"
+(ammit provides this functionality)
+
+=================================================================
+
+.box(1,0,0) has high specificity than #box(0,1,0) 
+,has high specificity than h1(0,0,1)--->(1:27:00 (6.video))
+=============================================================
+
+(1:33:30)
+by default div display is block in nature so we change it to 
+display : flex _> refer (4:26 pm nov 4 2022 photos)
+
+flex will keep the boxex next to each other 
+if it is display block then each box will come in ew line
+
+    "<div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>"
+
+you need to define display:flex in css file
+
+why we are getting like the one we taken in photos
+ (4:26 pm nov 4 2022 photos)
+because, by default flex has flex-direction  as 'row',
+
+that is why we get like that ,
+
+
+but if we want column wise 
+we can can specify "flex-direction: column" in main.css
+======================================================================
+
+(1:38:00)
+i have placed "hello" in box but the properties
+of container will only apply for child of container which is box , so the 
+properties of container will not apply for child of box 
+
+
+for properties to get applied for "hello" you need to give like this
+"""
+<div class="box" style="display:flex;
+        justify-content: center;">Hello</div>
+
+""""
+
+for "hello" to vertical and horizontal center then do like this 
+
+"""
+
+<div class="box" style="display:flex;
+        justify-content: center ; align-items: center;">Hello</div>
+    
+"""
+
+(1:41:22) flex =1 
+
+
+========================================================================
+(1:47:30)-(1:52:00)
+justify-content is for main axis 
+
+if flex direction is row then main axis is horizontal 
+if flex direction is column then main axis is vertical
+
+align-items is for cross axis 
+
+if flex direction is row then cross axis is vertical
+if flex direction is column then cross axis is horizontal  
+
+======================================================================
+
+(1:53:30)
+justify-content:space-between
+
+
